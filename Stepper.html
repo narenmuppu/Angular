@@ -1,12 +1,11 @@
-<nav aria-label="Progress" class="w-full p-2.5">
-  <ol class="relative flex w-full min-w-[320px] items-start">
+<nav aria-label="Progress" class="stepper">
+  <ol class="stepper__list">
     <!-- Step 1: Completed -->
-    <li class="relative flex flex-1 flex-col items-center after:content-[''] after:absolute after:left-1/2 after:top-[18px] after:-translate-y-1/2 after:z-0 after:h-[2px] after:w-full after:rounded-full after:bg-indigo-600">
-      <span
-        class="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border-2 border-indigo-600 bg-indigo-600 text-white"
-        aria-hidden="true"
-      >
-        <svg viewBox="0 0 20 20" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+    <li class="stepper__item stepper__item--completed">
+      <span class="stepper__connector" aria-hidden="true"></span>
+
+      <span class="stepper__circle" aria-hidden="true">
+        <svg viewBox="0 0 20 20" class="stepper__icon" fill="currentColor" aria-hidden="true">
           <path
             fill-rule="evenodd"
             d="M16.704 5.29a1 1 0 0 1 .006 1.415l-8.01 8.13a1 1 0 0 1-1.415.002L3.29 10.84a1 1 0 1 1 1.42-1.414l3.074 3.07 7.303-7.41a1 1 0 0 1 1.617.204Z"
@@ -15,62 +14,57 @@
         </svg>
       </span>
 
-      <div class="mt-2 px-1 text-center min-w-0">
-        <p class="text-sm font-semibold text-gray-900 leading-snug">
+      <div class="stepper__label-wrap">
+        <p class="stepper__title">
           Account <span class="sr-only">(Completed)</span>
         </p>
-        <p class="text-xs text-gray-700 leading-snug">Completed</p>
+        <p class="stepper__meta">Completed</p>
       </div>
     </li>
 
     <!-- Step 2: Current -->
-    <li class="relative flex flex-1 flex-col items-center after:content-[''] after:absolute after:left-1/2 after:top-[18px] after:-translate-y-1/2 after:z-0 after:h-[2px] after:w-full after:rounded-full after:bg-gray-300 dark:after:bg-gray-700">
-      <span
-        class="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border-2 border-indigo-600 bg-white text-indigo-700"
-        aria-current="step"
-      >
-        <span aria-hidden="true" class="text-sm font-semibold">2</span>
+    <li class="stepper__item stepper__item--current">
+      <span class="stepper__connector" aria-hidden="true"></span>
+
+      <span class="stepper__circle" aria-current="step">
+        <span aria-hidden="true" class="stepper__number">2</span>
       </span>
 
-      <div class="mt-2 px-1 text-center min-w-0">
-        <p class="text-sm font-semibold text-gray-900 leading-snug">
+      <div class="stepper__label-wrap">
+        <p class="stepper__title">
           Details <span class="sr-only">(Current step)</span>
         </p>
-        <p class="text-xs text-gray-700 leading-snug">Current step</p>
+        <p class="stepper__meta">Current step</p>
       </div>
     </li>
 
     <!-- Step 3: Upcoming -->
-    <li class="relative flex flex-1 flex-col items-center after:content-[''] after:absolute after:left-1/2 after:top-[18px] after:-translate-y-1/2 after:z-0 after:h-[2px] after:w-full after:rounded-full after:bg-gray-300 dark:after:bg-gray-700">
-      <span
-        class="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border-2 border-gray-300 bg-gray-100 text-gray-700"
-        aria-hidden="true"
-      >
-        3
+    <li class="stepper__item stepper__item--upcoming">
+      <span class="stepper__connector" aria-hidden="true"></span>
+
+      <span class="stepper__circle" aria-hidden="true">
+        <span aria-hidden="true" class="stepper__number">3</span>
       </span>
 
-      <div class="mt-2 px-1 text-center min-w-0">
-        <p class="text-sm font-semibold text-gray-900 leading-snug">
+      <div class="stepper__label-wrap">
+        <p class="stepper__title">
           Payment <span class="sr-only">(Upcoming)</span>
         </p>
-        <p class="text-xs text-gray-700 leading-snug">Upcoming</p>
+        <p class="stepper__meta">Upcoming</p>
       </div>
     </li>
 
-    <!-- Step 4: Upcoming (no connector after) -->
-    <li class="relative flex flex-1 flex-col items-center">
-      <span
-        class="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border-2 border-gray-300 bg-gray-100 text-gray-700"
-        aria-hidden="true"
-      >
-        4
+    <!-- Step 4: Upcoming -->
+    <li class="stepper__item stepper__item--upcoming stepper__item--last">
+      <span class="stepper__circle" aria-hidden="true">
+        <span aria-hidden="true" class="stepper__number">4</span>
       </span>
 
-      <div class="mt-2 px-1 text-center min-w-0">
-        <p class="text-sm font-semibold text-gray-900 leading-snug">
+      <div class="stepper__label-wrap">
+        <p class="stepper__title">
           Review <span class="sr-only">(Upcoming)</span>
         </p>
-        <p class="text-xs text-gray-700 leading-snug">Upcoming</p>
+        <p class="stepper__meta">Upcoming</p>
       </div>
     </li>
   </ol>
