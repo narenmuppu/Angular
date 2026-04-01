@@ -1,0 +1,137 @@
+/* stepper.css */
+.stepper {
+  width: 100%;
+}
+
+.stepper__list {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stepper__item {
+  position: relative;
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stepper__connector {
+  position: absolute;
+  left: 50%;
+  top: 18px; /* center of 36px circle */
+  transform: translateY(-50%);
+  z-index: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 9999px;
+  background: #d1d5db; /* gray-300 */
+}
+
+.stepper__circle {
+  position: relative;
+  z-index: 10;
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d1d5db;
+  border-radius: 9999px;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 0.875rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.stepper__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.stepper__label-wrap {
+  margin-top: 0.5rem;
+  padding: 0 0.25rem;
+  text-align: center;
+  min-width: 0;
+}
+
+.stepper__title {
+  margin: 0;
+  color: #111827;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+.stepper__meta {
+  margin: 0.125rem 0 0;
+  color: #374151;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+/* Modifiers */
+.stepper__item--completed .stepper__circle {
+  border-color: #4f46e5;
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.stepper__item--completed .stepper__connector {
+  background: #4f46e5;
+}
+
+.stepper__item--current .stepper__circle {
+  border-color: #4f46e5;
+  background: #ffffff;
+  color: #4338ca;
+}
+
+.stepper__item--upcoming .stepper__circle {
+  border-color: #d1d5db;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Last step has no connector after */
+.stepper__item--last .stepper__connector {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stepper__list {
+    min-width: 0;
+    gap: 0.25rem;
+  }
+
+  .stepper__title {
+    font-size: 0.8125rem;
+  }
+
+  .stepper__meta {
+    font-size: 0.6875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stepper__circle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .stepper__connector {
+    top: 16px; /* center of 32px circle */
+  }
+
+  .stepper__label-wrap {
+    margin-top: 0.375rem;
+  }
+}
